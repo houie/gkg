@@ -11,6 +11,11 @@ public class Shareholder {
     private String lastname;
     private Set<Character> shares;
 
+    public Shareholder(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public Shareholder(String firstname, String lastname, Set<Character> shares) {
         this.firstname = firstname;
         this.lastname = lastname;

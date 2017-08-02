@@ -56,6 +56,10 @@ public enum Team {
         return this.team;
     }
 
+    public String getFullname() {
+        return this.city + " " + this.team;
+    }
+
     public String getAbbreviation() {
         return this.name();
     }

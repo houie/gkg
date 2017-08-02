@@ -2,6 +2,8 @@ package com.houie.gkg.service.impl;
 
 import com.houie.gkg.dao.GameDAO;
 import com.houie.gkg.lang.Game;
+import com.houie.gkg.lang.Selection;
+import com.houie.gkg.lang.Shareholder;
 import com.houie.gkg.lang.Team;
 import com.houie.gkg.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +41,19 @@ public class GameServiceImpl implements GameService {
 
     public Game getGame(int id) {
         return gameDAO.get(id);
+    }
+
+    public List<Selection> getSelections() {
+
+        Shareholder toivo = new Shareholder("Toivo", "Lainevool");
+        Shareholder holly = new Shareholder("Holly", "Wang");
+        Shareholder kellie = new Shareholder("Kellie", "Olivo");
+
+        List<Selection> selections = new ArrayList<Selection>();
+        selections.add(new Selection(1, 'A', toivo, 1, 'A', Team.PHI));
+        selections.add(new Selection(2, 'B', holly, 21, 'A', Team.ANA));
+        selections.add(new Selection(3, 'C', kellie, 31, 'A', Team.CHI));
+
+        return selections;
     }
 }

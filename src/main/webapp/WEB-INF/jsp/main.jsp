@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<c:url value="/css/main.css"/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
 
@@ -19,41 +22,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <td>Pick</td>
-                        <td>Share</td>
-                        <td>Shareholder</td>
-                        <td>Game</td>
-                        <td>Opponent</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>A</td>
-                        <td>Toivo</td>
-                        <td>1A</td>
-                        <td>Flyers</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>B</td>
-                        <td>Holly</td>
-                        <td>21A</td>
-                        <td>Ducks</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>C</td>
-                        <td>Kellie</td>
-                        <td>31A</td>
-                        <td>Blackhawks</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="table-responsive" id="draft-table">
             </div>
         </div>
     </div>
@@ -62,7 +31,7 @@
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <p class="navbar-text pull-left on-the-clock">
-            <span class="small text-lowercase">On the Clock:</span>
+            <span class="small text-uppercase">On the Clock:</span>
             <strong class="text-uppercase">Hou-En</strong>
         </p>
 
@@ -71,5 +40,7 @@
         </div>
     </div>
 </div>
+
+<script src="<c:url value="/js/main.js"/>" type="text/babel"></script>
 </body>
 </html>

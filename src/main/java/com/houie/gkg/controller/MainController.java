@@ -48,4 +48,11 @@ public class MainController {
         model.put("game", gameService.getGame(id));
         return new ModelAndView("jsonView", model);
     }
+
+    @RequestMapping(value = {"/selections"}, method = RequestMethod.GET)
+    public ModelAndView getSelections(ModelMap model, HttpSession session) {
+        model.put("selections", gameService.getSelections());
+        return new ModelAndView("jsonView", model);
+    }
+
 }
