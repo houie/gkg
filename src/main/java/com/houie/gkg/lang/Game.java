@@ -5,13 +5,13 @@ import java.util.Date;
 /**
  * Created by houie on 8/1/2017.
  */
-public class HomeGame {
+public class Game {
 
     private int id;
     private Team opponent;
     private Date date;
 
-    public HomeGame(int id, Team opponent, Date date) {
+    public Game(int id, Team opponent, Date date) {
         this.id = id;
         this.opponent = opponent;
         this.date = date;
