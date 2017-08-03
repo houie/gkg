@@ -8,68 +8,70 @@ package com.houie.gkg.lang;
  */
 public class Selection {
 
-  private int pick;
-  private char share;
-  private Shareholder shareholder;
-  private int gameId;
-  private char pair;
-  private Team team;
+    private int pick;
+    private char share;
+    private String shareholder;
+    private int gameId;
+    private char pair;
+    private Team team;
 
-  public Selection(int pick, char share, Shareholder shareholder, int gameId, char pair, Team team) {
-    this.pick = pick;
-    this.share = share;
-    this.shareholder = shareholder;
-    this.gameId = gameId;
-    this.pair = pair;
-    this.team = team;
-  }
+    public Selection() {}
 
-  public int getPick() {
-    return pick;
-  }
+    public Selection(int pick, char share, String shareholder, int gameId, char pair, Team team) {
+        this.pick = pick;
+        this.share = share;
+        this.shareholder = shareholder;
+        this.gameId = gameId;
+        this.pair = pair;
+        this.team = team;
+    }
 
-  public void setPick(int pick) {
-    this.pick = pick;
-  }
+    public int getPick() {
+        return pick;
+    }
 
-  public char getShare() {
-    return share;
-  }
+    public void setPick(int pick) {
+        this.pick = pick;
+    }
 
-  public void setShare(char share) {
-    this.share = share;
-  }
+    public char getShare() {
+        return share;
+    }
 
-  public Shareholder getShareholder() {
-    return shareholder;
-  }
+    public void setShare(char share) {
+        this.share = share;
+    }
 
-  public void setShareholder(Shareholder shareholder) {
-    this.shareholder = shareholder;
-  }
+    public String getShareholder() {
+        return shareholder;
+    }
 
-  public int getGameId() {
-    return gameId;
-  }
+    public void setShareholder(String shareholder) {
+        this.shareholder = shareholder;
+    }
 
-  public void setGameId(int gameId) {
-    this.gameId = gameId;
-  }
+    public int getGameId() {
+        return gameId;
+    }
 
-  public char getPair() {
-    return pair;
-  }
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
+    }
 
-  public void setPair(char pair) {
-    this.pair = pair;
-  }
+    public char getPair() {
+        return pair;
+    }
 
-  public Team getTeam() {
-    return team;
-  }
+    public void setPair(char pair) {
+        this.pair = pair;
+    }
 
-  public void setTeam(Team team) {
-    this.team = team;
-  }
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 
 }

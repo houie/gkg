@@ -45,15 +45,15 @@ public class GameServiceImpl implements GameService {
 
     public List<Selection> getSelections() {
 
-        Shareholder toivo = new Shareholder("Toivo", "Lainevool");
-        Shareholder holly = new Shareholder("Holly", "Wang");
-        Shareholder kellie = new Shareholder("Kellie", "Olivo");
-
         List<Selection> selections = new ArrayList<Selection>();
-        selections.add(new Selection(1, 'A', toivo, 1, 'A', Team.PHI));
-        selections.add(new Selection(2, 'B', holly, 21, 'A', Team.ANA));
-        selections.add(new Selection(3, 'C', kellie, 31, 'A', Team.CHI));
+        selections.add(new Selection(1, 'A', "Toivo", 1, 'A', Team.PHI));
+        selections.add(new Selection(2, 'B', "Holly", 21, 'A', Team.ANA));
+        selections.add(new Selection(3, 'C', "Kellie", 31, 'A', Team.CHI));
 
         return selections;
+    }
+
+    public Selection createSelection(Selection selection) {
+        return selection;
     }
 }

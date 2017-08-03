@@ -16,4 +16,5 @@ public interface GameService {
     List<Game> getGames();
     Game getGame(int id);
     List<Selection> getSelections();
+    Selection createSelection(Selection selection);
 }

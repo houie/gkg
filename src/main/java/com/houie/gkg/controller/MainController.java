@@ -1,12 +1,16 @@
 package com.houie.gkg.controller;
 
+import com.houie.gkg.dto.SelectionDto;
+import com.houie.gkg.lang.Selection;
 import com.houie.gkg.service.GameService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -55,4 +59,29 @@ public class MainController {
         return new ModelAndView("jsonView", model);
     }
 
+    @RequestMapping(value = {"/selections"}, method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseBody
+    public SelectionDto addSelection(@RequestBody SelectionDto selectionDto) {
+        Selection selection = convertToEntity(selectionDto);
+        Selection selectionCreated = gameService.createSelection(selection);
+        return convertToDto(selectionCreated);
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
+    private ModelMapper modelMapper = new ModelMapper();
+
+    private Selection convertToEntity(SelectionDto selectionDto) {
+        Selection selection = modelMapper.map(selectionDto, Selection.class);
+        return selection;
+    }
+
+    private SelectionDto convertToDto(Selection selection) {
+        SelectionDto selectionDto = modelMapper.map(selection, SelectionDto.class);
+        return selectionDto;
+    }
 }

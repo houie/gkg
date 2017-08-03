@@ -26,8 +26,8 @@ class DraftTableBody extends React.Component {
             <tr key={'draft_'+i}>
                 <td>{draft.pick}</td>
                 <td>{draft.share}</td>
-                <td>{draft.shareholder.firstname}</td>
-                <td>{draft.gameId}{draft.pair}</td>
+                <td>{draft.shareholder}</td>
+                <td>{draft.gameId} {draft.pair}</td>
                 <td>{draft.team.team}</td>
             </tr>
         );
