@@ -44,21 +44,21 @@ public class MainController {
     }
 
     @RequestMapping(value = {"/games"}, method = RequestMethod.GET)
-    public ModelAndView getGames(ModelMap model, HttpSession session) {
-        model.put("games", gameService.getGames());
-        return new ModelAndView("jsonView", model);
+    @ResponseBody
+    public List<Game> getGames() {
+        return gameService.getGames();
     }
 
     @RequestMapping(value = {"/games/{id}"}, method = RequestMethod.GET)
-    public ModelAndView getGameById(@PathVariable int id, ModelMap model, HttpSession session) {
-        model.put("game", gameService.getGame(id));
-        return new ModelAndView("jsonView", model);
+    @ResponseBody
+    public Game getGameById(@PathVariable int id) {
+        return gameService.getGame(id);
     }
 
     @RequestMapping(value = {"/selections"}, method = RequestMethod.GET)
-    public ModelAndView getSelections(ModelMap model, HttpSession session) {
-        model.put("selections", convertToDtos(gameService.getSelections()));
-        return new ModelAndView("jsonView", model);
+    @ResponseBody
+    public List<SelectionDto> getSelections(ModelMap model, HttpSession session) {
+        return convertToDtos(gameService.getSelections());
     }
 
     @RequestMapping(value = {"/selections"}, method = RequestMethod.POST)

@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -36,10 +37,13 @@
             <strong class="text-uppercase">Hou-En</strong>
         </p>
 
-        <div class="navbar-text pull-right">
-            <a href="#" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-star"></span> Select</a>
+        <div class="navbar-text pull-right" id="selection-button">
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="selection-modal" tabindex="-1" role="dialog" aria-labelledby="selection-modal-label">
 </div>
 
 <script src="<c:url value="/js/main.js"/>" type="text/babel"></script>
