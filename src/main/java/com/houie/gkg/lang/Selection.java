@@ -13,17 +13,15 @@ public class Selection {
     private String shareholder;
     private int gameId;
     private char pair;
-    private Team team;
 
     public Selection() {}
 
-    public Selection(int pick, char share, String shareholder, int gameId, char pair, Team team) {
+    public Selection(int pick, char share, String shareholder, int gameId, char pair) {
         this.pick = pick;
         this.share = share;
         this.shareholder = shareholder;
         this.gameId = gameId;
         this.pair = pair;
-        this.team = team;
     }
 
     public int getPick() {
@@ -64,14 +62,6 @@ public class Selection {
 
     public void setPair(char pair) {
         this.pair = pair;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
     }
 
 }

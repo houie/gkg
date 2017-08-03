@@ -23,9 +23,9 @@ public class GameServiceImpl implements GameService {
 
     private static final List<Selection> SELECTIONS = new ArrayList<Selection>();
     {
-        SELECTIONS.add(new Selection(1, 'A', "Toivo", 1, 'A', Team.PHI));
-        SELECTIONS.add(new Selection(2, 'B', "Holly", 21, 'A', Team.ANA));
-        SELECTIONS.add(new Selection(3, 'C', "Kellie", 31, 'A', Team.CHI));
+        SELECTIONS.add(new Selection(1, 'A', "Toivo", 1, 'A'));
+        SELECTIONS.add(new Selection(2, 'B', "Holly", 21, 'A'));
+        SELECTIONS.add(new Selection(3, 'C', "Kellie", 31, 'A'));
     }
 
     public List<Team> getTeams() {

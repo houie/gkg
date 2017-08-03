@@ -26,6 +26,8 @@ public class GameDAO {
             games.add(new Game(3, Team.BUF, DATE_FORMAT.parse("10/14/2017")));
             games.add(new Game(4, Team.NYI, DATE_FORMAT.parse("10/15/2017")));
             games.add(new Game(5, Team.MTL, DATE_FORMAT.parse("10/18/2017")));
+            games.add(new Game(21, Team.ANA, DATE_FORMAT.parse("01/13/2018")));
+            games.add(new Game(31, Team.CHI, DATE_FORMAT.parse("03/03/2018")));
         } catch (ParseException pe) {
             pe.printStackTrace();
         }

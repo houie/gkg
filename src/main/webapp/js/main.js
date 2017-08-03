@@ -4,7 +4,6 @@ class DraftTableHead extends React.Component {
             <thead>
             <tr>
                 <td>Pick</td>
-                <td>Share</td>
                 <td>Shareholder</td>
                 <td>Game</td>
                 <td>Opponent</td>
@@ -25,7 +24,6 @@ class DraftTableBody extends React.Component {
         const draftRows = this.props.data.map((draft, i) =>
             <tr key={'draft_'+i}>
                 <td>{draft.pick}</td>
-                <td>{draft.share}</td>
                 <td>{draft.shareholder}</td>
                 <td>{draft.gameId} {draft.pair}</td>
                 <td>{draft.team.team}</td>

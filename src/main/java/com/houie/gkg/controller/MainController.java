@@ -1,6 +1,7 @@
 package com.houie.gkg.controller;
 
 import com.houie.gkg.dto.SelectionDto;
+import com.houie.gkg.lang.Game;
 import com.houie.gkg.lang.Selection;
 import com.houie.gkg.service.GameService;
 import org.modelmapper.ModelMapper;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by houie on 8/1/2017.
@@ -54,7 +57,7 @@ public class MainController {
 
     @RequestMapping(value = {"/selections"}, method = RequestMethod.GET)
     public ModelAndView getSelections(ModelMap model, HttpSession session) {
-        model.put("selections", gameService.getSelections());
+        model.put("selections", convertToDtos(gameService.getSelections()));
         return new ModelAndView("jsonView", model);
     }
 
@@ -81,6 +84,16 @@ public class MainController {
 
     private SelectionDto convertToDto(Selection selection) {
         SelectionDto selectionDto = modelMapper.map(selection, SelectionDto.class);
+        Game game = gameService.getGame(selection.getGameId());
+        selectionDto.setTeam(game.getOpponent());
         return selectionDto;
+    }
+
+    private List<SelectionDto> convertToDtos(List<Selection> selections) {
+        List<SelectionDto> selectionDtos = new ArrayList<SelectionDto>();
+        for (Selection s : selections) {
+            selectionDtos.add(convertToDto(s));
+        }
+        return selectionDtos;
     }
 }
